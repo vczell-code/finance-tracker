@@ -9,11 +9,15 @@ Requires **Node.js ≥ 22**.
 
 ```bash
 npm install
-npm run dev          # http://localhost:3000
+npm run dev          # http://127.0.0.1:3000 (bound to this machine only)
 ```
 
 The database (`./data/finance.db`, override with `DATABASE_PATH`) is created, migrated and seeded with
 default categories automatically on first request. To do it manually: `npm run db:seed`.
+
+To keep the database somewhere else (recommended if the repo is in OneDrive/Dropbox — syncing a live SQLite
+file can corrupt it), put `DATABASE_PATH=C:/path/to/finance.db` in `.env.local` (gitignored). Next.js and the
+`db:*` scripts all read it.
 
 ## Scripts
 
@@ -25,6 +29,7 @@ default categories automatically on first request. To do it manually: `npm run d
 | `npm test` | Vitest (in-memory SQLite) |
 | `npm run db:generate` | Generate a new Drizzle migration after editing `src/db/schema.ts` |
 | `npm run db:seed` | Migrate + seed the database |
+| `npm run db:backup` | Snapshot the live database to `<db folder>/backups/` (or `BACKUP_DIR`); safe while the app runs |
 
 ## Features
 

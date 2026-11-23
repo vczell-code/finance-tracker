@@ -3,6 +3,7 @@ import path from "node:path";
 import Database from "better-sqlite3";
 import { drizzle, type BetterSQLite3Database } from "drizzle-orm/better-sqlite3";
 import { migrate } from "drizzle-orm/better-sqlite3/migrator";
+import { databasePath } from "./config";
 import * as schema from "./schema";
 import { seedIfNeeded } from "./seed";
 
@@ -29,7 +30,7 @@ const globalForDb = globalThis as unknown as { __financeDb?: DB };
 /** Lazily-initialised singleton (survives dev hot reloads). */
 export function getDb(): DB {
   if (!globalForDb.__financeDb) {
-    const { db } = createDb(process.env.DATABASE_PATH ?? "./data/finance.db");
+    const { db } = createDb(databasePath());
     seedIfNeeded(db);
     globalForDb.__financeDb = db;
   }
