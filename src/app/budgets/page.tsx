@@ -17,18 +17,18 @@ import { cn } from "@/lib/utils";
 function StatusLabel({ percent }: { percent: number }) {
   if (percent >= 100)
     return (
-      <span className="inline-flex items-center gap-1 text-xs font-medium text-red-600">
+      <span className="inline-flex items-center gap-1 text-xs font-medium text-red-600 dark:text-red-400">
         <XCircle className="size-3.5" /> Over budget
       </span>
     );
   if (percent >= 80)
     return (
-      <span className="inline-flex items-center gap-1 text-xs font-medium text-amber-600">
+      <span className="inline-flex items-center gap-1 text-xs font-medium text-amber-600 dark:text-amber-400">
         <AlertTriangle className="size-3.5" /> Nearly there
       </span>
     );
   return (
-    <span className="inline-flex items-center gap-1 text-xs font-medium text-emerald-600">
+    <span className="inline-flex items-center gap-1 text-xs font-medium text-emerald-600 dark:text-emerald-400">
       <CheckCircle2 className="size-3.5" /> On track
     </span>
   );
@@ -135,7 +135,7 @@ export default function BudgetsPage() {
                       <div className="flex items-center gap-2">
                         <CategoryIcon icon={c.icon} color={c.color} size="sm" />
                         <span className="min-w-0 flex-1 truncate text-sm font-medium">{c.name}</span>
-                        <span className={cn("text-sm tabular-nums", pct !== null && pct >= 100 && "text-red-600")}>
+                        <span className={cn("text-sm tabular-nums", pct !== null && pct >= 100 && "text-red-600 dark:text-red-400")}>
                           {formatCents(s, cur)}
                         </span>
                         <span className="text-xs text-muted-foreground">/</span>

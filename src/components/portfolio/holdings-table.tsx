@@ -14,7 +14,7 @@ import type { EnrichedHolding } from "@/lib/types";
 import { cn } from "@/lib/utils";
 
 const tone = (v: number | null) =>
-  v === null ? "text-muted-foreground" : v > 0 ? "text-emerald-600" : v < 0 ? "text-red-600" : "text-muted-foreground";
+  v === null ? "text-muted-foreground" : v > 0 ? "text-emerald-600 dark:text-emerald-400" : v < 0 ? "text-red-600 dark:text-red-400" : "text-muted-foreground";
 
 export function HoldingsTable({
   holdings,

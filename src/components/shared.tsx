@@ -59,8 +59,8 @@ export function StatCard({
         <div
           className={cn(
             "text-2xl font-semibold tracking-tight tabular-nums",
-            tone === "positive" && "text-emerald-600",
-            tone === "negative" && "text-red-600",
+            tone === "positive" && "text-emerald-600 dark:text-emerald-400",
+            tone === "negative" && "text-red-600 dark:text-red-400",
           )}
         >
           {value}
@@ -108,7 +108,7 @@ export function TxAmount({
     <span
       className={cn(
         "font-medium whitespace-nowrap tabular-nums",
-        type === "INCOME" && "text-emerald-600",
+        type === "INCOME" && "text-emerald-600 dark:text-emerald-400",
         type === "TRANSFER" && "text-muted-foreground",
         className,
       )}

@@ -56,7 +56,8 @@ export function Donut({
             </Pie>
             <Tooltip
               formatter={(v, name) => [`${formatValue(Number(v))} · ${formatPercent((Number(v) / total) * 100)}`, name]}
-              contentStyle={{ borderRadius: 8, border: "1px solid var(--border)", fontSize: 12 }}
+              contentStyle={{ borderRadius: 8, border: "1px solid var(--border)", fontSize: 12, background: "var(--popover)", color: "var(--popover-foreground)" }}
+            itemStyle={{ color: "var(--popover-foreground)" }}
             />
           </PieChart>
         </ResponsiveContainer>

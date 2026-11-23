@@ -41,13 +41,13 @@ export default function DashboardPage() {
         <StatCard
           label="Income"
           value={formatCents(summary.totalIncomeCents, cur)}
-          icon={<ArrowUpRight className="size-4 text-emerald-600" />}
+          icon={<ArrowUpRight className="size-4 text-emerald-600 dark:text-emerald-400" />}
         />
         <StatCard
           label="Expenses"
           value={formatCents(summary.totalExpenseCents, cur)}
           sub={`${formatCents(summary.fixedExpenseCents, cur)} fixed · ${formatCents(summary.variableExpenseCents, cur)} variable`}
-          icon={<ArrowDownRight className="size-4 text-red-600" />}
+          icon={<ArrowDownRight className="size-4 text-red-600 dark:text-red-400" />}
         />
         <StatCard
           label="Net cash flow"
@@ -99,7 +99,7 @@ export default function DashboardPage() {
                 <p
                   className={cn(
                     "text-sm font-medium tabular-nums",
-                    p.summary.totalDayChangeBase > 0 ? "text-emerald-600" : p.summary.totalDayChangeBase < 0 ? "text-red-600" : "text-muted-foreground",
+                    p.summary.totalDayChangeBase > 0 ? "text-emerald-600 dark:text-emerald-400" : p.summary.totalDayChangeBase < 0 ? "text-red-600 dark:text-red-400" : "text-muted-foreground",
                   )}
                 >
                   {formatSignedMoney(p.summary.totalDayChangeBase, p.baseCurrency)} ({formatPercent(p.summary.totalDayChangePercent, 2, true)}) today

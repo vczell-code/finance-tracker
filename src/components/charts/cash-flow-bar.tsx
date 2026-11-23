@@ -33,7 +33,8 @@ export function CashFlowBar({
           <Tooltip
             cursor={{ fill: "var(--muted)", opacity: 0.6 }}
             formatter={(v, name) => [formatCents(Number(v), currency), name]}
-            contentStyle={{ borderRadius: 8, border: "1px solid var(--border)", fontSize: 12 }}
+            contentStyle={{ borderRadius: 8, border: "1px solid var(--border)", fontSize: 12, background: "var(--popover)", color: "var(--popover-foreground)" }}
+            itemStyle={{ color: "var(--popover-foreground)" }}
           />
           <Legend iconType="circle" iconSize={8} wrapperStyle={{ fontSize: 12, color: "var(--muted-foreground)" }} />
           <Bar dataKey="incomeCents" name="Income" fill={INCOME} radius={[4, 4, 0, 0]} maxBarSize={28} isAnimationActive={false} />

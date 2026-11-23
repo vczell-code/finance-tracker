@@ -33,11 +33,11 @@ export function RefreshWarning({ message, onDismiss }: { message: string | null;
   return (
     <div
       role="status"
-      className="mb-4 flex items-start gap-2 rounded-lg border border-amber-300 bg-amber-50 px-3 py-2 text-sm text-amber-900"
+      className="mb-4 flex items-start gap-2 rounded-lg border border-amber-300 bg-amber-50 px-3 py-2 text-sm text-amber-900 dark:border-amber-500/40 dark:bg-amber-500/10 dark:text-amber-200"
     >
       <AlertTriangle className="mt-0.5 size-4 shrink-0" aria-hidden />
       <span className="flex-1">{message}</span>
-      <button onClick={onDismiss} aria-label="Dismiss" className="rounded p-0.5 hover:bg-amber-100">
+      <button onClick={onDismiss} aria-label="Dismiss" className="rounded p-0.5 hover:bg-amber-100 dark:hover:bg-amber-500/20">
         <X className="size-4" />
       </button>
     </div>
